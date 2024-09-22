@@ -1,4 +1,4 @@
- export function PhotosShow({ photo, onUpdate }) {
+export function PhotosShow({ photo, onUpdate, onDestroy }) {
         
      const handleSubmit = (event) => {
        event.preventDefault();
@@ -24,6 +24,7 @@
          </div>
          <button type="submit">Update</button>
        </form>
+       <button onClick={() => onDestroy(photo.id)}>Destroy</button>
     </div>
   );
 }

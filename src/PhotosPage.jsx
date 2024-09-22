@@ -48,6 +48,14 @@
                    handleClose();
                  });
                };
+
+                  const handleDestroy = (id) => {
+                     console.log("handleDestroy", id);
+                     axios.delete(`http://localhost:3000/posts/${id}.json`).then(() => {
+                       setPhotos(photos.filter((photo) => photo.id !== id));
+                       handleClose();
+                     });
+                   };
         
            const handleClose = () => {
              console.log("handleClose");
@@ -61,7 +69,7 @@
         <PhotosNew onCreate={handleCreate} />
         <PhotosIndex photos={photos} onShow={handleShow} />
         <Modal show={isPhotosShowVisible} onClose={handleClose}>
-        <PhotosShow photo={currentPhoto} onUpdate={handleUpdate} />
+        <PhotosShow photo={currentPhoto} onUpdate={handleUpdate} onDestroy={handleDestroy} />
        </Modal>
       </main>
     );
