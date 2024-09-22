@@ -8,19 +8,16 @@
     
         return (
           <div>
-            <h1>New Photo</h1>
+            <h1>New Blog</h1>
             <form onSubmit={handleSubmit}>
               <div>
-                Name: <input name="name" type="text" />
+                Title: <input name="title" type="text" />
               </div>
               <div>
-                Url: <input name="url" type="text" />
+                Image: <input name="image" type="text" />
               </div>
               <div>
-                Width: <input name="width" type="text" />
-              </div>
-              <div>
-                Height: <input name="height" type="text" />
+                Body: <input name="body" type="text" />
               </div>
               <button type="submit">Create</button>
             </form>

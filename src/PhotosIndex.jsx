@@ -1,13 +1,12 @@
- export function PhotosIndex({ photos }) {
+export function PhotosIndex({ photos, onShow }) {
     return (
       <div>
-        <h1>All photos</h1>
+        <h1>All post</h1>
        {photos.map((photo) => (
          <div key={photo.id}>
            <h2>{photo.name}</h2>
-           <img src={photo.url} />
-           <p>Width: {photo.width}</p>
-           <p>Height: {photo.height}</p>
+           <img src={photo.image} />
+           <button onClick={() => onShow(photo)}>More info</button>
          </div>
        ))}
       </div>
